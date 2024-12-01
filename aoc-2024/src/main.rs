@@ -2,8 +2,7 @@ use std::{ path::Path, fs::File, io::{BufRead, BufReader}};
 mod solver;
 
 fn main() {
-    let lines = read_lines("src/solver/in.txt");
-    solver::solve(lines);
+    solver::solve(read_lines("input/2.txt"));
 }
 
 fn read_lines(filename: &str) -> impl Iterator<Item = String> {
