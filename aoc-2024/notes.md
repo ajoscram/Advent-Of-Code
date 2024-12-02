@@ -8,4 +8,6 @@ https://doc.rust-lang.org/rust-by-example
 https://doc.rust-lang.org/stable/cargo/
 
 # Commands
-cargo build && cargo run
+* `cargo build`: Builds the project
+* `cargo run`: Builds and runs the project. Runs `cargo build` implicitly
+* `cargo check`: Runs the code through the compiler, but doesn't create the executable. Faster than building
