@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+pub const DAY: &str = "1";
+
 pub fn solve(lines: impl Iterator<Item = String>) {
     let mut left: Vec<i32> = Vec::new();
     let mut right: Vec<i32> = Vec::new();

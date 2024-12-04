@@ -1,3 +1,5 @@
+pub const DAY: &str = "2";
+
 struct Report { levels: Vec<i32>, }
 
 pub fn solve(lines: impl Iterator<Item = String>) {
@@ -20,12 +22,12 @@ pub fn solve(lines: impl Iterator<Item = String>) {
 
     // 2nd star
 
-    let safe_reports_with_dampener_count = reports
+    let safe_dampened_reports_count = reports
         .iter()
-        .filter(|report| are_levels_safe_with_dampener(&report.levels))
+        .filter(|report| are_dampened_levels_safe(&report.levels))
         .count();
 
-    println!("The number of safe reports with the Problem Dampener is {}", safe_reports_with_dampener_count);
+    println!("The number of safe reports with the Problem Dampener is {}", safe_dampened_reports_count);
 }
 
 fn are_levels_safe(levels: &[i32]) -> bool {
@@ -39,7 +41,7 @@ fn is_difference_valid(a: &i32, b: &i32) -> bool {
     return difference >= 1 && difference <= 3;
 }
 
-fn are_levels_safe_with_dampener(levels: &Vec<i32>) -> bool {
+fn are_dampened_levels_safe(levels: &Vec<i32>) -> bool {
     for i in 0..levels.len() {
         let dampened_levels = levels
             .iter()
