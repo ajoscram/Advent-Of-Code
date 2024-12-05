@@ -89,7 +89,7 @@ impl Search {
     }
 
     fn has_word(&self, x: i32, y: i32, direction: fn(i32, i32) -> (i32, i32), mut letters: Iter<char>) -> bool {
-        let char = match letters.next() {
+        let character = match letters.next() {
             Some(c) => *c,
             None => return true,
         };
@@ -98,7 +98,7 @@ impl Search {
             return false;
         }
 
-        if self.contents[y as usize][x as usize] != char {
+        if self.contents[y as usize][x as usize] != character {
             return false;
         }
 
